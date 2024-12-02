@@ -4,181 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Navbar</title>
+    <title>The Moon Clan</title>
+    <link rel="stylesheet" href="style.css" />
+    
+    <link rel="icon" href="img/moonclan-head.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-        }
+        
 
-        /* Navbar */
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 20px;
-            background-color: #f8f9fa;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand img {
-            height: 50px;
-        }
-
-        .navbar-icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .icon-counter {
-            position: relative;
-        }
-
-        .icon-counter .badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: red;
-            color: white;
-            font-size: 12px;
-            border-radius: 50%;
-            padding: 3px 6px;
-        }
-
-        /* Search Bar */
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background-color: white;
+        .rounded-5 {
             border-radius: 20px;
-            padding: 5px 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .search-bar input {
-            border: none;
-            outline: none;
-            width: 100%;
-            padding: 5px 10px;
-            font-size: 16px;
+        .hover-grow:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
         }
 
-        .search-bar i {
-            color: #888;
+        .narroto {
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 0.5px;
         }
 
-        /* Sidebar */
-        .offcanvas {
+        .btn-outline-dark {
+            border-color: black;
+            color: black;
+        }
+
+        .btn-outline-dark:hover {
             background-color: black;
             color: white;
         }
 
-        .offcanvas-header .btn-close {
-            color: white;
+        .fullscreen-img {
+            width: 100%;
+            height: auto;
         }
 
-        .offcanvas-body ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .offcanvas-body ul li a {
-            color: white;
-            font-size: 1.2rem;
-            text-decoration: none;
-            display: block;
-            padding: 10px 0;
-        }
-
-        .offcanvas-body ul li a:hover {
-            color: #ddd;
-        }
-
-        .offcanvas-body .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .offcanvas-body .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        /* Desktop View - Search Bar Position */
-        @media (min-width: 768px) {
-            .navbar {
-                justify-content: space-between;
-            }
-
-            .navbar .search-bar {
-                display: flex;
-                margin-left: 20px;
-                max-width: 400px;
-            }
-
-            .navbar .navbar-icons {
-                flex-grow: 1;
-                justify-content: flex-end;
-            }
-
-            .navbar .search-bar input {
-                width: 100%;
-            }
-        }
-
-        /* Mobile View - Search Bar Position */
-        @media (max-width: 767px) {
-            .search-bar-container {
-                display: block;
-                padding: 10px 20px;
-                background-color: #f8f9fa;
-            }
-
-            .search-bar-container .search-bar {
-                margin-top: 10px;
-                width: 100%;
-            }
-        }
+        
     </style>
 </head>
 
-<body>
+<body class="bg-white text-black">
+
+    <button class="scroll-up" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+      </button>
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
-            <i class="fas fa-bars fa-lg"></i>
-        </button>
-        <a href="#" class="navbar-brand">
-            <img src="img/logo.png" alt="Logo">
-        </a>
-
-        <!-- Search Bar (Desktop and Mobile) -->
-        <div class="search-bar d-none d-md-flex">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search for products...">
+    <nav class="navbar bg-light">
+        <div class="container">
+            <!-- Navbar Links -->
+            <div class="navbar-links d-none d-md-flex">
+                <a href="shop.html" class="fs-4 text-uppercase mx-2">Shop</a>
+                <a href="about.html" class="fs-4 text-uppercase mx-2">About</a>
+                <a href="contact.html" class="fs-4 text-uppercase mx-2">Contact</a>
+            </div>
+    
+            <!-- Navbar Brand -->
+            <a href="index.html" class="navbar-brand  w-25  d-flex justify-content-end">
+                <img src="img/logo.png" alt="Logo" class="desktop-logo d-none d-md-inline">
+                <img src="img/moonclon-logo.png" alt="Mobile Logo" class="mobile-logo d-md-none">
+            </a>
+    
+            <!-- Search Bar and Icons -->
+            <div class="d-flex align-items-center">
+                <!-- Search Bar (Visible on md and larger) -->
+                <div class="search-bar-container-lg d-none d-md-block me-3">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search for products..." class="form-control">
+                    </div>
+                </div>
+    
+                <!-- Navbar Icons -->
+                <div class="navbar-icons d-flex align-items-center">
+                    <a href="waitlist.html" class="icon-counter text-dark mx-2">
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                        <span class="badge bg-secondary">0</span>
+                    </a>
+                    <a href="cart.html" class="icon-counter text-dark mx-2">
+                        <i class="fa-solid fa-bag-shopping fa-lg"></i>
+                        <span class="badge bg-secondary">2</span>
+                    </a>
+                    <i class="fa-regular fa-user fa-lg mx-2"></i>
+    
+                    <!-- Toggler Button for Mobile/Tablet -->
+                    <button class="navbar-toggler bg-dark text-white py-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-
-        <div class="navbar-icons">
-            <div class="icon-counter">
-                <i class="fa-regular fa-heart fa-lg"></i>
-                <span class="badge">0</span>
+    
+        <!-- Collapsible Menu for Mobile/Tablet -->
+        <div class="collapse" id="navbarContent">
+            <div class="d-md-none text-center mt-3">
+                <a href="shop.html" class="fs-5 text-uppercase d-block my-2">Shop</a>
+                <a href="about.html" class="fs-5 text-uppercase d-block my-2">About</a>
+                <a href="contact.html" class="fs-5 text-uppercase d-block my-2">Contact</a>
+                <div class="search-bar mt-3">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for products..." class="form-control">
+                </div>
             </div>
-            <div class="icon-counter">
-                <i class="fa-solid fa-bag-shopping fa-lg"></i>
-                <span class="badge">2</span>
-            </div>
-            <i class="fa-regular fa-user fa-lg"></i>
         </div>
     </nav>
+    
+    
 
-    <!-- Search Bar (Visible on mobile below navbar) -->
+    <!-- Search Bar (Mobile View) -->
     <div class="search-bar-container d-md-none">
         <div class="search-bar">
             <i class="fas fa-search"></i>
@@ -187,27 +129,191 @@
     </div>
 
     <!-- Offcanvas Sidebar -->
-    <div class="offcanvas offcanvas-start" id="offcanvasMenu">
+    <div class="offcanvas offcanvas-end bg-dark" id="offcanvasMenu">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">X</button>
         </div>
         <div class="offcanvas-body">
-            <!-- Navigation Links -->
-            <ul class="mobile-nav">
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <!-- Social Icons -->
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="d-flex justify-content-center">
+            <div class="half-circle-container">
+                <img src="img/about-bg-2.png" alt="Half Circle and Square">
             </div>
         </div>
+        <p class="text-center text-light my-3">All Rights Reserved By THEMOONCLAN.IN</p>
+        <p class="text-light text-center mt-3">"The Moon Clan offers premium, fancy products blending elegance, innovation, and unmatched quality."</p>
+            <ul class="mobile-nav">
+                <li><a href="shop.html" class="fw-bold fs-5">Shop</a></li>
+                <li><a href="about.html" class="fw-bold fs-5">About</a></li>
+                <li><a href="contact.html" class="fw-bold fs-5">Contact Us</a></li>
+            </ul>
+            <div class="d-flex justify-content-center">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-youtube fs-2"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter fs-2"></i></a>
+                <a href="#"><i class="fab fa-instagram fs-2"></i></a>
+                
+                <a href="#"><i class="fab fa-linkedin fs-2"></i></a>
+            </div>
+        </div>
+        </div>
     </div>
+    <header class="container rounded-4 ">
+        <img src="img/header-banner-1.jpg" alt="Header Image" class="header-image mt-3 rounded-4  w-100">
+    </header>
 
+    <div class="button-container">
+        <button>Fashion</button>
+        <button>Cosmetics</button>
+        <button>Accessories</button>
+        <button>Skincare</button>
+        <button>All</button>
+    </div>
+    <!-- Products Section -->
+    <section class="container py-5 d-flex justify-content-center">
+        
+        <div class="row g-4 text-center ">
+            <div class="col-lg-6 col-12" >
+                <div class="card rounded-4   border bg-light shadow-sm overflow-hidden" style="max-width: 700px;max-height: 700px;">
+                    <div>
+                    <img src="img/product-1.png"  class="card-img-top   " style="max-height: 400px;"  alt="Product 1">
+                </div>
+                    <div class="card-body px-3">
+                        <p class="text-muted fs-6">Mapup</p>
+                        <h5 class="fw-bold">Neo Nude Foundation
+                        </h5>
+                        <p>₹999.00</p>
+                        <button class="btn btn-outline-dark  fw-bold  rounded-pill w-100" style="padding: 10px 0px;font-family: 'Poppins', sans-serif;">
+                            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                        </button>
+
+
+                        <button class="btn btn-none mt-1    rounded-pill w-100" style="padding: 10px 0px;font-family: 'Poppins', sans-serif;">
+                            <i class="fa-regular fa-heart"></i> Add to Wishlist
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12" >
+                <div class="card  border rounded-4 bg-light shadow-sm overflow-hidden" style="max-width: 700px;max-height: 700px;">
+                    <div>
+                    <img src="img/product-2.png"  class="card-img-top   " style="max-height: 400px;"  alt="Product 1">
+                </div>
+                    <div class="card-body px-3">
+                        <p class="text-muted fs-6">Mapup</p>
+                        <h5 class="fw-bold">Neo Nude Foundation
+                        </h5>
+                        <p>₹999.00</p>
+                        <button class="btn btn-outline-dark  fw-bold  rounded-pill w-100" style="padding: 10px 0px;font-family: 'Poppins', sans-serif;">
+                            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                        </button>
+
+
+                        <button class="btn btn-none mt-1    rounded-pill w-100" style="padding: 10px 0px;font-family: 'Poppins', sans-serif;">
+                            <i class="fa-regular fa-heart"></i> Add to Wishlist
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <div class="card rounded-4 border bg-light shadow-sm overflow-hidden" 
+                     style="max-width: 700px; height: 640px; max-height: 700px; 
+                            background-image: url('img/banner.jpg'); 
+                            background-size: cover; background-position: center; position: relative;">
+                    
+                    <!-- Text Content -->
+                    <div class="text-center text-white" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <h1 style="font-size: 3rem; font-weight: bold; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);">
+                            Luxurious Beauty
+                        </h1>
+                        <p style="font-size: 1.2rem; font-weight: 300; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);">
+                            Unleash your style with elegance and charm.
+                        </p>
+                        
+                        <!-- Rounded Pill -->
+                        <div class="d-inline-block mt-3 px-4 py-2 rounded-pill bg-white text-dark fw-bold shadow">
+                            Makeup
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 col-12" >
+                <div class="card  border rounded-4 bg-light shadow-sm overflow-hidden" style="max-width: 700px;max-height: 700px;">
+                    <div>
+                    <img src="img/product-2.png"  class="card-img-top   " style="max-height: 400px;"  alt="Product 1">
+                </div>
+                    <div class="card-body px-3">
+                        <p class="text-muted fs-6">Mapup</p>
+                        <h5 class="fw-bold">Neo Nude Foundation
+                        </h5>
+                        <p>₹999.00</p>
+                        <button class="btn btn-outline-dark  fw-bold  rounded-pill w-100" style="padding: 10px 0px;font-family: 'Poppins', sans-serif;">
+                            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                        </button>
+
+
+                        <button class="btn btn-none mt-1    rounded-pill w-100" style="padding: 10px 0px;font-family: 'Poppins', sans-serif;">
+                            <i class="fa-regular fa-heart"></i> Add to Wishlist
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add more products similarly -->
+        </div>
+    </section>
+
+    <div class="container d-flex justify-content-center">
+
+    
+    <img src="img/logo.png"  width="90%"/>
+</div>
+<hr>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Join Us on Themoonclan to an effortless glow</h5>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fs-5 fw-bold">Navigate</h6>
+                    <ul class="list-unstyled " >
+                        <li><a href="shop.html" class="text-dark a-none">Shop</a></li>
+                        <li><a href="about.html" class="text-dark a-none">About</a></li>
+                        <li><a href="contact.html" class="text-dark a-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fs-5 fw-bold">Social</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark a-none">Facebook</a></li>
+                        
+                        <li><a href="#" class="text-dark a-none">Youtube</a></li>
+                        
+                        <li><a href="#" class="text-dark a-none">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase fs-5 fw-bold">Get in Touch</h6>
+                    <p>We're here M-F 9am-5pm PST
+                         <br>
+                        drop a note anytime:<br>
+                        
+                        info@themoonclan.in
+                        </p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <hr class="my-4">
+        <p class="text-center mb-0">©  Copyright 2024 themoonclan .All Rights Reserved | Privacy Policy | Terms and Conditions | Return and Refund | Shipping Policy</p>
+    </footer>
+<script src="script.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
